@@ -6,7 +6,6 @@
                     <!-- 第一种写法 -->
                     <!-- <router-link :to="`/news/detail/${item.title}/${item.content}`">{{ item.title }}</router-link> -->
                      <!-- 第二种写法 -->
-                      <button @click="getDetail(item)">详情</button>
                     <router-link :to="{
                         // path:'/news/detail',
                         name:'detailPage',
@@ -25,12 +24,6 @@
 </template>
 <script setup lang="ts" name="News">
 import {reactive} from "vue"
-import { useRouter } from "vue-router";
-const router = useRouter()
-interface detailInfo{
-    title:string,
-    content:string
-}
 const obj = reactive([
     {
         title:'第一',
@@ -46,16 +39,6 @@ const obj = reactive([
         content:'我是第三'
     },
 ])
-function getDetail(item:detailInfo){
-    router.push({
-                        name:'detailPage',
-                        params:{
-                            title:item.title,
-                            content:item.content,
-                        }
-                    }
-                    )
-}
 </script>
 <style  scoped>
 .mainbox{

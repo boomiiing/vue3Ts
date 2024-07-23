@@ -36,10 +36,6 @@ import Detail from "@/pages/detail.vue"
     {
       path:'/firstPage',
       component:FirstPage
-    },
-    {
-      path:'/',
-      redirect:'/firstPage'
     }
   ]
 })
